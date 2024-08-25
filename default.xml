@@ -41,4 +41,6 @@
   <project remote="clo-la" name="kernel_platform/toolchain/prebuilts/ndk/r23" path="kernel_platform/prebuilts/ndk-r23" revision="93532f3052c14fbb337ff57d5732128dc7481ee6" upstream="refs/heads/ks-kernel.lnx.2.0.r1-rel"/>
   <project remote="clo-la" name="kernelplatform/prebuilts-master/clang/host/linux-x86" path="kernel_platform/prebuilts/clang/host/linux-x86" revision="c420e3ab93e51a2f2ab4f8e8b517463c34a7e8bd" upstream="refs/heads/ks-kernel.lnx.2.0.r1-rel"/>
   <project remote="clo-la" name="kernelplatform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" path="kernel_platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" revision="58f2f7c11b5309aa4d15079b398852670b5baf7b" upstream="refs/heads/ks-kernel.lnx.2.0.r1-rel"/>
+  <include name="kernel.xml" />
+  <include name="modules.xml" />
 </manifest>

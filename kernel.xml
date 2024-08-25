@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <remote name="google" fetch="https://android.googlesource.com" sync-c="true" sync-tags="false"/>
+  <remote name="kernel" fetch="https://github.com/samsung-8550-kernel" sync-c="true" sync-tags="false" revision="android14-base"/>
+
+  <!-- Common kernel -->
+  <remove-project name="kernel/common"/>
+  <project name="kernel/common" path="kernel_platform/common" remote="google" revision="android13-5.15">
+    <linkfile dest=".source_date_epoch_dir" src="."/>
+  </project>
+
+  <!-- MSM kernel -->
+  <remove-project name="kernel/msm-5.15"/>
+  <project name="kernel_platform_msm-kernel" path="kernel_platform/msm-kernel" remote="kernel">
+    <linkfile dest="kernel_platform/common/build.config.msm.kalama" src="build.config.msm.kalama"/>
+    <linkfile dest="kernel_platform/common/scripts/setlocalversion" src="scripts/setlocalversion"/>
+  </project>
+
+  <!-- Proprietary main devicetree -->
+  <project name="vendor_qcom_proprietary_devicetree" path="vendor/qcom/proprietary/devicetree" remote="kernel">
+    <linkfile dest="kernel_platform/msm-kernel/arch/arm64/boot/dts/vendor" src="."/>
+  </project>
+
+  <!-- Build script -->
+  <project name="kernel_platform_script" path="kernel_platform/script" remote="kernel">
+    <linkfile dest="build.sh" src="build.sh"/>
+  </project>
+</manifest>
